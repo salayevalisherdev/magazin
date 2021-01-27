@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteRule ^(frontend)/web/ - [L]
+RewriteRule .* frontend/web/$0
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+/web)/.*$ $1/index.php
